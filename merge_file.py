@@ -142,7 +142,7 @@ def merge_files(temp_file_names, final_file_name):
 
     # Initialise queue
     for index, file_name in enumerate(temp_file_names):
-        the_file = utils.Open(file_name, 'rb')
+        the_file = Open(file_name, 'rb')
 
         for line in the_file:
 
