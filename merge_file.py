@@ -5,7 +5,7 @@ Author: Shujia Huang
 Date: 2017-04-26
 """
 
-
+import sys
 import heapq
 import gzip
 
@@ -70,7 +70,6 @@ class FileForQueueing(object):
         Destructor
         """
         self.the_file.close()
-        os.remove(self.the_file.name)
 
     def next(self):
         """
@@ -153,7 +152,6 @@ def merge_files(temp_file_names, final_file_name):
         # remove it.
         else:
             the_file.close()
-            os.remove(file_name)
 
     # Merge-sort the output using a priority queue
     while len(the_heap) != 0:
