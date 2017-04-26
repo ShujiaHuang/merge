@@ -105,6 +105,13 @@ class FileForQueueing(object):
             raise StopIteration
 
 
+def expandedOpen(path, mode):
+    try:
+        return open(path, mode)
+    except IOError:
+        return open(os.path.expanduser(path), mode)
+
+
 def Open(fileName, mode, compressLevel=9):
     """
     Function that allows transparent usage of dictzip, gzip and
